@@ -1,5 +1,5 @@
-﻿/** @file Cjt_Categorias.hh
-@brief Especificaci�n de la clase Categoria
+﻿/** @file Mensaje.hh
+@brief Especificaci�n de la clase Mensaje
 */
 
 #ifndef MENSAJE_HH
@@ -7,27 +7,36 @@
 
 #ifndef NO_DIAGRAM
 #endif
-#include "Alfabeto.hh"
 /**
 Clase Mensaje
 */
+#include <iostream>
+#include <utility>
 
 using namespace std;
 
 /** @class Mensaje
-	@brief 
+	@brief Representan un mensaje 
 */
 class Mensaje
 {
 private:
+	pair <string, string> msg;
 
 public:
+	/** @brief Contructora
+		\pre Cierto
+		\post Se ha creado un objeto*/
 	Mensaje();
+
+	Mensaje(string msg, string alf);
+
+	/** @brief Destructora
+		\pre Cierto
+		\post Se ha destruido un objeto*/
 	~Mensaje();
 
-	/** @brief Consulta de Puntos
-		\pre
-		\post */
+	void imprimir();
 	
 };
 #endif

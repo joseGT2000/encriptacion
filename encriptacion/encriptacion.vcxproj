@@ -143,8 +143,6 @@
     <ClCompile Include="Cjt_Alfabeto.cc" />
     <ClCompile Include="Cjt_Mensaje.cc" />
     <ClCompile Include="Mensaje.cc" />
-    <ClCompile Include="Permutacion.cc" />
-    <ClCompile Include="Sustitucion.cc" />
     <ClCompile Include="program.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -152,8 +150,6 @@
     <ClInclude Include="Cjt_Alfabeto.hh" />
     <ClInclude Include="Cjt_Mensaje.hh" />
     <ClInclude Include="Mensaje.hh" />
-    <ClInclude Include="Permutacion.hh" />
-    <ClInclude Include="Sustitucion.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

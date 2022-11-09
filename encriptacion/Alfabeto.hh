@@ -1,5 +1,5 @@
-﻿/** @file Cjt_Categorias.hh
-@brief Especificaci�n de la clase Categoria
+﻿/** @file Alfabeto.hh
+@brief Especificaci�n de la clase Alfabeto
 */
 
 #ifndef ALFABETO_HH
@@ -11,22 +11,39 @@
 /**
 Clase Alfabeto
 */
+#include <iostream>
+#include <utility>
 
 using namespace std;
 
 /** @class Alfabeto
-	@brief 
+	@brief Representa un conjunto de caracteres que forman un alfabeto
 */
 class Alfabeto
 {
 private:
 
+	string alfabeto;
+	int numMensajes = 0;
+	bool special = true;
+
 public:
+	/** @brief Contructora
+		\pre Cierto
+		\post Se ha creado un objeto*/
 	Alfabeto();
+
+	Alfabeto(string alf);
+
+	/** @brief Destructora
+		\pre Cierto
+		\post Se ha destruido un objeto*/
 	~Alfabeto();
 
-	/** @brief Consulta de Puntos
-		\pre
-		\post */
+	void sumarMensaje();
+
+	void imprimir();
+
+	void esSpecial();
 };
 #endif
