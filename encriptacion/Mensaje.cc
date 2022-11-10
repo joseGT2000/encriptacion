@@ -23,3 +23,20 @@ void Mensaje::imprimir()
 	cout << "\"" << msg.second << "\"" << endl;
 
 }
+string Mensaje::alfabetoPertenece() {
+	return msg.first;
+}
+
+string Mensaje::mensajeTiene() {
+	return msg.second;
+}
+
+void Mensaje::codDecod()
+{
+	codificado = not codificado;
+}
+
+bool Mensaje::codificacion()
+{
+	return codificado;
+}

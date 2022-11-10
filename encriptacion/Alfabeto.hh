@@ -42,6 +42,12 @@ public:
 
 	void sumarMensaje();
 
+	void restarMensaje();
+
+	int numMensaje();
+
+	string returnAlf();
+
 	void imprimir();
 
 	void esSpecial();

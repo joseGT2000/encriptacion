@@ -64,17 +64,17 @@ public:
 	/** @brief Codifica por sustitucion un mensaje guardado
 		\pre Cierto
 		\post Se ha codificado un mensaje que ya estaba guardado con un alfabeto especifico*/
-	void codificaSustGuardado();
+	void codificaSustGuardado(Cjt_Alfabeto& alf);
 
 	/** @brief Codifica por sustitucion un mensaje no guardado
 		\pre Cierto
 		\post Se ha codificado un mensaje que no estaba guardado con un alfabeto especifico*/
-	void codificaSustNoGuardado();
+	void codificaSustNoGuardado(Cjt_Alfabeto& alf);
 
 	/** @brief Deodifica por sustitucion
 		\pre Cierto
 		\post Ha decodificado el mensaje anteriormente codificado por el metodo de sustitucion*/
-	void decodificaSust();
+	void decodificaSust(Cjt_Alfabeto& alf);
 	
 	/** @brief Codifica por permutacion un mensaje guardado
 		\pre Cierto
@@ -90,5 +90,6 @@ public:
 		\pre Cierto
 		\post Ha decodificado el mensaje anteriormente codificado por el metodo de permutacion*/
 	void decodificaPerm();
+	map<string, Mensaje>::iterator buscarCod(string alf);
 };
 #endif

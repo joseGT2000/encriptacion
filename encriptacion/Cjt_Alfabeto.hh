@@ -59,6 +59,10 @@ public:
 
 	void nuevoMsg(string alf);
 
+	void borrarMsg(string alf);
+
+	string devolverAlf(string id);
+
 	map<string, Alfabeto>::const_iterator findAlfabeto(string nombre);
 
 	map<string, Alfabeto>::const_iterator ultimaPos();

@@ -22,6 +22,7 @@ class Mensaje
 {
 private:
 	pair <string, string> msg;
+	bool codificado = false;
 
 public:
 	/** @brief Contructora
@@ -37,6 +38,14 @@ public:
 	~Mensaje();
 
 	void imprimir();
+
+	string alfabetoPertenece();
+
+	string mensajeTiene();
+
+	void codDecod();
+
+	bool codificacion();
 	
 };
 #endif

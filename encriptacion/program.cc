@@ -34,15 +34,16 @@ using namespace std;
     //alfabetos.conjuntoInicial();
     //mensajes.conjuntoInicial();
 
-    string opcion;
+    string opcion, aux;
     cin >> opcion;
-    getchar();
+    getline(cin, aux);
+    getline(cin, aux);
     while (opcion != "fin")
     {
-        cout << "#" << opcion << endl;
+        cout << "#" << opcion;
         if (opcion == "nuevo_mensaje" or opcion == "nm")
         {
-            mensajes.addMensaje();
+            mensajes.addMensaje(alfabetos);
         }
         else if (opcion == "nuevo_alfabeto" or opcion == "na")
         {
@@ -50,7 +51,7 @@ using namespace std;
         }
         else if (opcion == "borra_mensaje" or opcion == "bm")
         {
-            mensajes.borrarMensaje();
+            mensajes.borrarMensaje(alfabetos);
         }
         else if (opcion == "borra_alfabeto" or opcion == "ba")
         {
@@ -58,23 +59,25 @@ using namespace std;
         }
         else if (opcion == "listar_mensajes" or opcion == "lm")
         {
+            cout << endl;
             mensajes.listarMensajes();
         }
         else if (opcion == "listar_alfabetos" or opcion == "la")
         {
+            cout << endl;
             alfabetos.listarAlfabeto();
         }
         else if (opcion == "codificar_sustitucion_guardado" or opcion == "csg")
         {
-            mensajes.codificaSustGuardado();
+            mensajes.codificaSustGuardado(alfabetos);
         }
         else if (opcion == "codificar_sustitucion" or opcion == "cs")
         {
-            mensajes.codificaSustNoGuardado();
+            mensajes.codificaSustNoGuardado(alfabetos);
         }
-        else if (opcion == "decodificar_sustitución" or opcion == "ds")
+        else if (opcion == "decodificar_sustitucion" or opcion == "ds")
         {
-            mensajes.decodificaSust();
+            mensajes.decodificaSust(alfabetos);
         }
         else if (opcion == "codificar_permutacion_guardado" or opcion == "cpg")
         {
@@ -90,5 +93,6 @@ using namespace std;
         }
 
         cin >> opcion;
+        getline(cin, aux);
     }
 }

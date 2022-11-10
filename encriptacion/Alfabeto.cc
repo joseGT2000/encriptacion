@@ -22,6 +22,21 @@ void Alfabeto::sumarMensaje()
 	++numMensajes;
 }
 
+void Alfabeto::restarMensaje()
+{
+	--numMensajes;
+}
+
+int Alfabeto::numMensaje()
+{
+	return numMensajes;
+}
+
+string Alfabeto::returnAlf()
+{
+	return alfabeto;
+}
+
 void Alfabeto::imprimir()
 {
 	if (special) 
