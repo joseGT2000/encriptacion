@@ -31,13 +31,8 @@ using namespace std;
     Cjt_Alfabeto alfabetos;
     Cjt_Mensaje mensajes(alfabetos);
 
-    //alfabetos.conjuntoInicial();
-    //mensajes.conjuntoInicial();
-
-    string opcion, aux;
+    string opcion;
     cin >> opcion;
-    getline(cin, aux);
-    getline(cin, aux);
     while (opcion != "fin")
     {
         cout << "#" << opcion;
@@ -91,8 +86,11 @@ using namespace std;
         {
             mensajes.decodificaPerm();
         }
+        else {
+            cout << endl;
+        }
 
         cin >> opcion;
-        getline(cin, aux);
     }
 }
+

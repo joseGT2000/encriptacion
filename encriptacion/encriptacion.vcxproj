@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alfabeto.hh" />
+    <ClInclude Include="BinTree.hh" />
     <ClInclude Include="Cjt_Alfabeto.hh" />
     <ClInclude Include="Cjt_Mensaje.hh" />
     <ClInclude Include="Mensaje.hh" />

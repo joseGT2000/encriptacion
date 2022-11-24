@@ -3,37 +3,38 @@
 */
 #include "Cjt_Alfabeto.hh"
 
-Cjt_Alfabeto::Cjt_Alfabeto(){
+Cjt_Alfabeto::Cjt_Alfabeto() {
 	int n;
 	string a, nombre;
 	cin >> n;
-	getline(cin, nombre);
-	getline(cin, nombre);
-	for (int i = 0; i < n;  ++i)
+	for (int i = 0; i < n; ++i)
 	{
 		getline(cin, nombre);
+		while (nombre == "" or nombre == " ") {
+			cin.clear();
+			getline(cin, nombre);
+		}
 		getline(cin, a);
+		while (a == "" or nombre == " ") {
+			cin.clear();
+			getline(cin, a);
+		}
 		Alfabeto aux(a);
 		alfabetos.insert(make_pair(nombre, aux));
-		getline(cin, nombre);
 	}
 }
 
-Cjt_Alfabeto::~Cjt_Alfabeto(){}
-
-void Cjt_Alfabeto::conjuntoInicial(){}
+Cjt_Alfabeto::~Cjt_Alfabeto() {}
 
 void Cjt_Alfabeto::addAlfabeto()
 {
-	string nombre, aux, alf;
+	string nombre, alf;
 	map <string, Alfabeto>::const_iterator it;
 	cin >> nombre;
-	getline(cin, aux);
 	cin >> alf;
-	getline(cin, aux);
 	cout << " " << nombre << endl;
 	it = alfabetos.find(nombre);
-	if(it != alfabetos.end())
+	if (it != alfabetos.end())
 		cout << "error: el alfabeto ya existe" << endl;
 	else {
 		Alfabeto aux(alf);
@@ -44,10 +45,10 @@ void Cjt_Alfabeto::addAlfabeto()
 
 void Cjt_Alfabeto::borrarAlfabeto()
 {
-	string nombre, aux;
+	string nombre;
 	map <string, Alfabeto>::const_iterator it;
 	cin >> nombre;
-	getline(cin, aux);
+
 	cout << " " << nombre << endl;
 	it = alfabetos.find(nombre);
 	if (it == alfabetos.end())
@@ -57,7 +58,7 @@ void Cjt_Alfabeto::borrarAlfabeto()
 			cout << "error: hay mensajes guardados con el alfabeto" << endl;
 		else {
 			alfabetos.erase(it);
-			cout << alfabetos.size() << endl; 
+			cout << alfabetos.size() << endl;
 		}
 	}
 }
@@ -79,9 +80,9 @@ void Cjt_Alfabeto::nuevoMsg(string alf)
 	map <string, Alfabeto>::iterator it;
 	it = alfabetos.find(alf);
 
-	if(it != alfabetos.end()) 
+	if (it != alfabetos.end())
 		it->second.sumarMensaje();
-	
+
 }
 
 void Cjt_Alfabeto::borrarMsg(string alf)
@@ -97,15 +98,27 @@ void Cjt_Alfabeto::borrarMsg(string alf)
 
 string Cjt_Alfabeto::devolverAlf(string id)
 {
+	string alf = "0";
 	map <string, Alfabeto>::iterator it;
 	it = alfabetos.find(id);
-	return it->second.returnAlf();
-
+	if (it != alfabetos.end())
+		alf = it->second.returnAlf();
+	return alf;
 }
 
-map<string, Alfabeto>::const_iterator Cjt_Alfabeto::findAlfabeto(string nombre)
+bool Cjt_Alfabeto::devolverSpecial(string id)
 {
-	map <string, Alfabeto>::const_iterator it;
+	bool special = false;
+	map <string, Alfabeto>::iterator it;
+	it = alfabetos.find(id);
+	if (it != alfabetos.end())
+		special = it->second.returnSpecial();
+	return special;
+}
+
+map<string, Alfabeto>::iterator Cjt_Alfabeto::findAlfabeto(string nombre)
+{
+	map <string, Alfabeto>::iterator it;
 	it = alfabetos.find(nombre);
 	return it;
 }
@@ -115,4 +128,3 @@ map<string, Alfabeto>::const_iterator Cjt_Alfabeto::ultimaPos()
 	map <string, Alfabeto>::const_iterator it = alfabetos.end();
 	return it;
 }
-

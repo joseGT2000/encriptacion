@@ -31,12 +31,3 @@ string Mensaje::mensajeTiene() {
 	return msg.second;
 }
 
-void Mensaje::codDecod()
-{
-	codificado = not codificado;
-}
-
-bool Mensaje::codificacion()
-{
-	return codificado;
-}

@@ -24,7 +24,8 @@ void Alfabeto::sumarMensaje()
 
 void Alfabeto::restarMensaje()
 {
-	--numMensajes;
+	if(numMensajes > 0)
+		--numMensajes;
 }
 
 int Alfabeto::numMensaje()
@@ -55,4 +56,9 @@ void Alfabeto::esSpecial()
 		else if(alfabeto[i] > alfabeto[i - 1] and (alfabeto[i] - alfabeto[i - 1]) != 1)
 			special = false;
 	}
+}
+
+bool Alfabeto::returnSpecial()
+{
+	return special;
 }

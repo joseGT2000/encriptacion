@@ -22,7 +22,6 @@ class Mensaje
 {
 private:
 	pair <string, string> msg;
-	bool codificado = false;
 
 public:
 	/** @brief Contructora
@@ -42,10 +41,6 @@ public:
 	string alfabetoPertenece();
 
 	string mensajeTiene();
-
-	void codDecod();
-
-	bool codificacion();
 	
 };
 #endif

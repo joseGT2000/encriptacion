@@ -44,5 +44,8 @@
     <ClInclude Include="Cjt_Mensaje.hh">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="BinTree.hh">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

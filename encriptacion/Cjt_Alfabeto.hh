@@ -37,11 +37,6 @@ public:
 		\post Se ha destruido un objeto*/
 	~Cjt_Alfabeto();
 
-	/** @brief Añade un conjunto de alfabetos al iniciar el programa
-		\pre Cierto
-		\post Se han añadido tantos alfabetos como el usuario ha querido*/
-	void conjuntoInicial();
-
 	/** @brief Se añade un unico alfabeto
 		\pre Cierto
 		\post Se ha añadido un alfabeto*/
@@ -63,8 +58,13 @@ public:
 
 	string devolverAlf(string id);
 
-	map<string, Alfabeto>::const_iterator findAlfabeto(string nombre);
+	bool devolverSpecial(string id);
+
+	map<string, Alfabeto>::iterator findAlfabeto(string nombre);
 
 	map<string, Alfabeto>::const_iterator ultimaPos();
+
+	int tamanyo();
+
 };
 #endif

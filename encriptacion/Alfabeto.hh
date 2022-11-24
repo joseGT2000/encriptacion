@@ -51,5 +51,7 @@ public:
 	void imprimir();
 
 	void esSpecial();
+
+	bool returnSpecial();
 };
 #endif

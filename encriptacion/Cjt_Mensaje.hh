@@ -11,7 +11,9 @@
 #include <utility>
 #include <iterator>
 #include <string>
+#include <vector>
 ///\endcond
+#include "BinTree.hh"
 #include "Mensaje.hh"
 #include "Cjt_Alfabeto.hh"
 /**
@@ -28,6 +30,22 @@ class Cjt_Mensaje
 private:
 	map<string, Mensaje> mensajes;
 
+	void ecuacionEncriptar(string& mensaje, string& alfabeto, string& clave);
+
+	void ecuacionEncriptarEspecial(string& mensaje, string& alfabeto, string& clave);
+
+	void ecuacionDesEncriptar(string& mensaje, string& alfabeto, string& clave);
+
+	void ecuacionDesEncriptarEspecial(string& mensaje, string& alfabeto, string& clave);
+
+	void permutar(string& mensaje);
+
+	BinTree<char> crear(string mensaje, int inferior, int superior);
+
+	BinTree<char> cambiar(BinTree<char> a, char hermano);
+	
+	void leer(BinTree<char> a);
+
 public:
 	/** @brief Contructora
 		\pre Cierto
@@ -40,11 +58,6 @@ public:
 		\pre Cierto
 		\post Se ha destruido un objeto*/
 	~Cjt_Mensaje();
-
-	/** @brief Añade un conjunto de mensajes al iniciar el programa
-		\pre Cierto
-		\post Se han añadido tantos mensajes como el usuario ha querido*/
-	void conjuntoInicial();
 
 	/** @brief Se añade un unico mensaje
 		\pre Cierto
@@ -65,6 +78,9 @@ public:
 		\pre Cierto
 		\post Se ha codificado un mensaje que ya estaba guardado con un alfabeto especifico*/
 	void codificaSustGuardado(Cjt_Alfabeto& alf);
+
+	
+
 
 	/** @brief Codifica por sustitucion un mensaje no guardado
 		\pre Cierto
@@ -90,6 +106,6 @@ public:
 		\pre Cierto
 		\post Ha decodificado el mensaje anteriormente codificado por el metodo de permutacion*/
 	void decodificaPerm();
-	map<string, Mensaje>::iterator buscarCod(string alf);
+
 };
 #endif
