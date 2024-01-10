@@ -19,5 +19,5 @@ El repositorio está organizado de la siguiente manera:
 
    ```bash
    git clone https://github.com/tu-usuario/nombre-repositorio.git
-
-   ejecuta el makefile 
+   cd encriptacion
+   make
