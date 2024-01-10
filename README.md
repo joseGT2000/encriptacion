@@ -10,8 +10,8 @@ El objetivo de este proyecto es implementar diferentes técnicas de encriptació
 
 El repositorio está organizado de la siguiente manera:
 
-- `/src`: Contiene el código fuente de las implementaciones de los algoritmos de encriptación y desencriptación.
-- `archivos doxigen`: El html de este tipo de archivos contiene la descripcion de cada funcion del programa junto a un diagrama explicativo de la relacion de cada clase del programa
+- `/encriptacion`: Contiene el código fuente de las implementaciones de los algoritmos de encriptación y desencriptación.
+- `/html`: Contiene la descripcion de cada funcion del programa junto a un diagrama explicativo de la relacion de cada clase del programa, lo puedes ver si abrex index.html
 
 ## Instrucciones de Uso
 
